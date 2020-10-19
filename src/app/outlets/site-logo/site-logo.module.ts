@@ -12,8 +12,7 @@ import {GenericLinkModule} from "@spartacus/storefront";
   imports: [
     CommonModule,
     GenericLinkModule
-  ],
-  entryComponents: [SiteLogoComponent]
+  ]
 })
 export class SiteLogoModule {
 }
