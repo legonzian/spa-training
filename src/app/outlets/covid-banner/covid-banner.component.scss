@@ -1,0 +1,26 @@
+.covid-banner {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  flex: 1 1 var(--cx-flex-basis, 100%);
+  max-width: 1140px;
+  margin: 0 auto;
+  width: 100%;
+
+  .alert {
+    min-height: 64px;
+    max-height: 200px;
+    width: 100%;
+    justify-content: flex-start;
+    margin: 2.5rem 0 0;
+
+    &-warning {
+      background-color: rgb(249, 151, 0);
+    }
+
+    .close {
+      top: 0;
+      right: 0;
+    }
+  }
+}

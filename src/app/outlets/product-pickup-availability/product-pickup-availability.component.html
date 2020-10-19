@@ -1,0 +1,10 @@
+<ng-template cxOutletRef="PDP.PRICE" cxOutletPos="after">
+  <div class="pickup-status" *ngIf="product$ | async as product">
+    <p class="--available" *ngIf="product.availableForPickup">
+      Pickup In Store available!
+    </p>
+    <p class="--unavailable" *ngIf="!product.availableForPickup">
+      Pickup In Store unavailable!
+    </p>
+  </div>
+</ng-template>

@@ -1,1 +1,26 @@
 /* You can add global styles to this file, and also import other style files */
+
+$styleVersion: 3.0;
+@import "custom-styles/index.scss";
+@import "~@spartacus/styles/index";
+@import "app/app.component.scss";
+
+:root {
+  --cx-color: white;
+  --cx-color-primary: rgb(249, 151, 0);
+  --cx-color-secondary: rgb(198, 170, 128);
+  --cx-color-dark: rgb(38, 38, 38);
+  --cx-color-background: rgb(57, 58, 58);
+  --cx-color-background-light: rgb(61, 62, 62);
+  --cx-color-text: rgb(198, 170, 128);
+  --cx-color-inverse: white;
+}
+
+body {
+  background: var(--cx-color-background-light);
+  color: white;
+}
+
+cx-tab-paragraph-container > button {
+  color: var(--cx-color);
+}

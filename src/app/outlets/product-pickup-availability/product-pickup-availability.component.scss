@@ -1,0 +1,11 @@
+.pickup-status {
+  font-weight: bold;
+
+  .--available {
+    color: green;
+  }
+
+  .--unavailable {
+    color: red;
+  }
+}
