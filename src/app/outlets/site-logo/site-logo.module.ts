@@ -1,7 +1,7 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {SiteLogoComponent} from "./site-logo.component";
-import {GenericLinkModule} from "@spartacus/storefront";
+import {GenericLinkModule, OutletRefModule} from "@spartacus/storefront";
 
 
 @NgModule({
@@ -11,7 +11,8 @@ import {GenericLinkModule} from "@spartacus/storefront";
   ],
   imports: [
     CommonModule,
-    GenericLinkModule
+    GenericLinkModule,
+    OutletRefModule
   ]
 })
 export class SiteLogoModule {

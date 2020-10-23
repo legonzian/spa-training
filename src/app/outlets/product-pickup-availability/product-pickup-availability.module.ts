@@ -1,6 +1,7 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {ProductPickupAvailabilityComponent} from "./product-pickup-availability.component";
+import {OutletRefModule} from "@spartacus/storefront";
 
 
 @NgModule({
@@ -9,7 +10,8 @@ import {ProductPickupAvailabilityComponent} from "./product-pickup-availability.
     ProductPickupAvailabilityComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    OutletRefModule
   ]
 })
 export class ProductPickupAvailabilityModule {

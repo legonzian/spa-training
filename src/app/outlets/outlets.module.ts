@@ -11,7 +11,7 @@ import {SiteLogoModule} from "./site-logo/site-logo.module";
     CommonModule,
     CovidBannerModule,
     ProductPickupAvailabilityModule,
-    SiteLogoModule
+    SiteLogoModule,
   ],
   exports: [
     OutletsComponent

@@ -1,8 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
 
 $styleVersion: 3.0;
-@import "custom-styles/index.scss";
+$skipComponentStyles: (cx-searchbox);
+
 @import "~@spartacus/styles/index";
+@import "custom-styles/index.scss";
 @import "app/app.component.scss";
 
 :root {
