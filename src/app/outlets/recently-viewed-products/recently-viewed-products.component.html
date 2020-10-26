@@ -1,9 +1,13 @@
 <ng-template cxOutletRef="CrossSelling" cxOutletPos="after">
   <ng-container *ngIf="recentlyViewed$ | async as codes">
-    <p *ngFor="let code of codes">
-      {{code}}
-    </p>
-
+    <div class="row">
+      <div class="col-12 mt-3">
+        <h2>Recently viewed Product Codes:</h2>
+        <p *ngFor="let code of codes">
+          {{code}}
+        </p>
+      </div>
+    </div>
   </ng-container>
 
   <!--<cx-carousel [items]="items$" title="Prouct Upselling" [template]="carouselItem"></cx-carousel>

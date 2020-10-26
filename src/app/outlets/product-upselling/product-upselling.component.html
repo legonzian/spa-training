@@ -15,7 +15,7 @@
 
   <h1>Other Products you might like</h1>
   <div class="row">
-    <div class="col-4" *ngFor="let product of products$ | async">
+    <div class="col-4" *ngFor="let product of products$ | async | slice:0:6">
       <a tabindex="0" [routerLink]="{ cxRoute: 'product', params: product } | cxUrl">
         <cx-media [container]="product.images?.PRIMARY"></cx-media>
         <h4>
