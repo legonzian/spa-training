@@ -1,0 +1,22 @@
+<ng-template cxOutletRef="CrossSelling" cxOutletPos="after">
+  <ng-container *ngIf="recentlyViewed$ | async as codes">
+    <p *ngFor="let code of codes">
+      {{code}}
+    </p>
+
+  </ng-container>
+
+  <!--<cx-carousel [items]="items$" title="Prouct Upselling" [template]="carouselItem"></cx-carousel>
+
+    <ng-template #carouselItem let-item="item">
+      <a tabindex="0" [routerLink]="{ cxRoute: 'product', params: item } | cxUrl">
+        <cx-media [container]="item.images?.PRIMARY"></cx-media>
+        <h4>
+          {{ item.name }}
+        </h4>
+        <div class="price">
+          {{ item.price?.formattedValue }}
+        </div>
+      </a>
+    </ng-template>-->
+</ng-template>

@@ -1,0 +1,8 @@
+<ng-template cxOutletRef="Section2A">
+  <ng-container *ngIf="randomProduct$ | async as product">
+    <cx-product-list-item
+      [product]="product"
+      class="cx-product-search-list"
+    ></cx-product-list-item>
+  </ng-container>
+</ng-template>
