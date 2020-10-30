@@ -17,6 +17,5 @@ export class ShotWithService {
       .pipe(
         this.converter.pipeable(IMAGES_NORMALIZER)
       );
-    /*.get(`https://loremflickr.com/json/g/320/240/photos/all`);*/
   }
 }

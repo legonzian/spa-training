@@ -1,7 +1,7 @@
 import {Component} from '@angular/core';
 import {CurrentProductService} from "@spartacus/storefront";
 import {Product, ProductScope, ProductSearchPage, ProductSearchService, ProductService} from "@spartacus/core";
-import {map, switchMap} from "rxjs/operators";
+import {filter, map, switchMap, tap} from "rxjs/operators";
 import {Observable, of} from "rxjs";
 
 @Component({
@@ -19,15 +19,13 @@ export class ProductUpsellingComponent {
     this.productSearchPage$ = currentProductService.getProduct()
       .pipe(
         map(product => product.name),
-        map(name => productSearchService.search(name)),
+        tap(name => productSearchService.search(name)),
         switchMap(() => productSearchService.getResults())
       );
 
     this.products$ = this.productSearchPage$.pipe(
-      map(productSearchPage => {
-        return productSearchPage.products
-      })
-    )
+      map(productSearchPage => productSearchPage.products)
+    );
 
     this.correct$ = this.products$.pipe(
       map(products => {
@@ -41,6 +39,7 @@ export class ProductUpsellingComponent {
         map(name => productSearchService.search(name)),
         switchMap(() => productSearchService.getResults()
           .pipe(
+            filter(productSearchPage => !!productSearchPage.products),
             map(productSearchPage => {
               return productSearchPage.products
             }),

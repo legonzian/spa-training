@@ -1,0 +1,27 @@
+header {
+  border-bottom: 1px solid currentColor;
+
+  .NavigationBar {
+    flex: 70%;
+  }
+
+  .SiteLinks {
+    flex: 30%;
+
+    cx-link {
+      padding-inline-end: 0;
+    }
+  }
+
+  .SiteLogo {
+    width: 140px;
+  }
+
+  .SiteContext {
+    flex: none;
+
+    &::after {
+      display: none;
+    }
+  }
+}

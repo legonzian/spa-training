@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import {Component, Inject} from '@angular/core';
+import {Config} from "@spartacus/core";
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'spa-training';
+
+  constructor(@Inject(Config) config) {
+    console.log(config);
+  }
 }

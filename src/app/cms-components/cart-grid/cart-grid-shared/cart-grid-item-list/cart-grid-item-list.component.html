@@ -1,0 +1,22 @@
+<ng-container *ngFor="let item of items; let i = index">
+  <ng-container
+    *ngIf="getControl(item) | async as control"
+    [class.is-changed]="control.get('quantity').dirty"
+  >
+    <cart-grid-item
+      class="col-12 col-sm-6 col-md-4"
+      [item]="item"
+      [quantityControl]="control.get('quantity')"
+      [readonly]="readonly"
+      [promotionLocation]="promotionLocation"
+      [options]="options"
+    >
+    </cart-grid-item>
+  </ng-container>
+</ng-container>
+
+<ng-template #totalHeader>
+  <div class="cx-item-list-total col-md-2 col-lg-2 col-xl-2">
+    {{ 'cartItems.total' | cxTranslate }}
+  </div>
+</ng-template>

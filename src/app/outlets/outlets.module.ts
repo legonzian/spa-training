@@ -7,8 +7,6 @@ import {SiteLogoModule} from "./site-logo/site-logo.module";
 import {ShotWithModule} from "./shot-with/shot-with.module";
 import {RecentlyViewedProductsModule} from "./recently-viewed-products/recently-viewed-products.module";
 import {PromoProductModule} from "./promo-product/promo-product.module";
-import {AutoLogoutModule} from "./auto-logout/auto-logout.module";
-import {ProductUpsellingModule} from "./product-upselling/product-upselling.module";
 
 @NgModule({
   declarations: [OutletsComponent],
@@ -20,8 +18,6 @@ import {ProductUpsellingModule} from "./product-upselling/product-upselling.modu
     ShotWithModule,
     RecentlyViewedProductsModule,
     PromoProductModule,
-    AutoLogoutModule,
-    ProductUpsellingModule
   ],
   exports: [
     OutletsComponent

@@ -12,11 +12,11 @@ import {map} from "rxjs/operators";
 export class RecentlyViewedProductsComponent {
   recentlyViewed$: Observable<string[]>
   productService: ProductService;
-/*  items$: Observable<Observable<Product>[]> = this.recentlyViewedService.recentlyViewed$.pipe(
-    map(codes => {
+  items$: Observable<Observable<Product>[]> = this.recentlyViewedService.recentlyViewed$.pipe(
+    map(codes =>
       codes.map(code => this.productService.get(code, ProductScope.LIST))
-    })
-  );*/
+    )
+  );
 
   constructor(private recentlyViewedService: RecentlyViewedService, productService: ProductService) {
     this.productService = productService;

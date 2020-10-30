@@ -1,8 +1,5 @@
-<ng-template cxOutletRef="CrossSelling" cxOutletPos="after">
-  <cx-carousel [items]="items$ | async"
-               title="Recently Viewed Products"
-               itemWidth="285px"
-               [template]="carouselItem"></cx-carousel>
+<ng-container>
+  <cx-carousel [items]="searchResult$ | async" title="Prouct Upselling" [template]="carouselItem"></cx-carousel>
 
   <ng-template #carouselItem let-item="item">
     <a tabindex="0" [routerLink]="{ cxRoute: 'product', params: item } | cxUrl">
@@ -15,4 +12,5 @@
       </div>
     </a>
   </ng-template>
-</ng-template>
+
+</ng-container>

@@ -1,28 +1,32 @@
-import {BrowserModule} from '@angular/platform-browser';
+import {BrowserModule, BrowserTransferStateModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
 
 import {AppComponent} from './app.component';
-import {translations, translationChunksConfig} from '@spartacus/assets';
+import {translationChunksConfig, translations} from '@spartacus/assets';
 import {B2cStorefrontModule} from '@spartacus/storefront';
 import {environment} from "../environments/environment";
 import {OutletsModule} from "./outlets/outlets.module";
+import {DeferLoadingStrategy} from "@spartacus/core";
+import {ConfigsModule} from "./configs/configs.module";
+import {HandlersModule} from "./handlers/handlers.module";
+import {CmsComponentsModule} from "./cms-components/cms-components.module";
 
 @NgModule({
   declarations: [
     AppComponent,
   ],
   imports: [
-    BrowserModule,
+    BrowserModule.withServerTransition({ appId: 'serverApp' }),
+    OutletsModule,
+    ConfigsModule,
+    HandlersModule,
+    CmsComponentsModule,
     B2cStorefrontModule.withConfig({
       backend: {
         occ: {
           baseUrl: environment.baseUrl ? environment.baseUrl : 'https://localhost:9002',
           prefix: environment.occPrefix ? environment.occPrefix : '/rest/v2/'
         }
-      },
-      context: {
-        currency: ['USD'],
-        language: ['en'],
       },
       i18n: {
         resources: translations,
@@ -32,8 +36,12 @@ import {OutletsModule} from "./outlets/outlets.module";
       features: {
         level: '3.0'
       },
+      deferredLoading: {
+        strategy: DeferLoadingStrategy.DEFER
+      }
     }),
-    OutletsModule
+    BrowserTransferStateModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,0 +1,7 @@
+lazy-banner {
+  @extend %cx-banner;
+
+  lazy-banner-media {
+    @extend %cx-media;
+  }
+}
