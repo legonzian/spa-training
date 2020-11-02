@@ -10,6 +10,7 @@ import {DeferLoadingStrategy} from "@spartacus/core";
 import {ConfigsModule} from "./configs/configs.module";
 import {HandlersModule} from "./handlers/handlers.module";
 import {CmsComponentsModule} from "./cms-components/cms-components.module";
+import {SeoModule} from "./seo/seo.module";
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import {CmsComponentsModule} from "./cms-components/cms-components.module";
     ConfigsModule,
     HandlersModule,
     CmsComponentsModule,
+    SeoModule,
     B2cStorefrontModule.withConfig({
       backend: {
         occ: {

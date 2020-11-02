@@ -1,0 +1,17 @@
+promo-product-item {
+  @extend %cx-product-list-item;
+  display: flex;
+  min-height: 245px;
+  max-width: 550px;
+
+  .cx-product-image {
+    display: flex;
+  }
+
+  .cx-product-summary {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+}

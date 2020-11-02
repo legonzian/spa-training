@@ -1,12 +1,10 @@
 <ng-template cxOutletRef="Section2A">
   <div class="row">
     <div class="col-12">
-      <h2>Promo Products</h2>
       <ng-container *ngIf="randomProduct$ | async as product">
-        <cx-product-list-item
+        <promo-product-item
           [product]="product"
-          class="cx-product-search-list"
-        ></cx-product-list-item>
+        ></promo-product-item>
       </ng-container>
     </div>
   </div>
